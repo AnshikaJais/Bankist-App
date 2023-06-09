@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/png" href="./img/icon.png" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+        />
+
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <p class="navbar__heading">Log in to get started</p>
+            <img class="navbar__img" src="./img/logo.png" alt="Logo" />
+            <form class="navbar__form">
+                <input
+                    class="login__input--user"
+                    type="text"
+                    placeholder="user"
+                />
+                <input
+                    class="login__input--pin"
+                    type="number"
+                    placeholder="PIN"
+                />
+                <button class="login__btn" type="submit">&rarr;</button>
+            </form>
+        </nav>
+        <main class="app">
+            <!-- BALANCE -->
+            <div class="balance">
+                <div>
+                    <p class="balance__label">Current balance</p>
+                    <p class="balance__date">
+                        As of <span>03/12/2022, 21:14</span>
+                    </p>
+                </div>
+                <p class="balance__value">0000€</p>
+            </div>
+            <!-- MOVEMENTS -->
+            <div class="movements">
+                <div class="movements__row">
+                    <div class="movements__type movements__type--deposit">
+                        8 deposit
+                    </div>
+                    <div class="movements__date">
+                        As of <span>12/03/2020</span>
+                    </div>
+                    <div class="movements__value">1300,00€</div>
+                </div>
+                <div class="movements__row">
+                    <div class="movements__type movements__type--withdrawal">
+                        8 withdrawal
+                    </div>
+                    <div class="movements__date">12/03/2020</div>
+                    <div class="movements__value">1300,00€</div>
+                </div>
+            </div>
+            <!-- SUMMARY -->
+            <div class="summary">
+                <p class="summary__label summary__label--in">In</p>
+                <p class="summary__value summary__value--in">27 035,20€</p>
+                <p class="summary__label summary__label--out">Out</p>
+                <p class="summary__value summary__value--out">1083, 61€</p>
+                <p class="summary__label summary__label--interest">Interest</p>
+                <p class="summary__value summary__value--interest">
+                    27 035,20€
+                </p>
+                <button class="btn--sort">&downarrow;Sort</button>
+            </div>
+            <!-- OPERATIONS -->
+            <div class="operations operations--transfer">
+                <h2>Transfer money</h2>
+                <form class="form form__transfer">
+                    <input
+                        type="text"
+                        class="form--transfer form__input form__transfer--to"
+                    />
+                    <input
+                        type="number"
+                        class="form__transfer form__input form__transfer--amount"
+                    />
+                    <button
+                        class="form__transfer form__transfer--btn"
+                        type="submit"
+                    >
+                        &rarr;
+                    </button>
+                    <label class="form__label form__transfer--label-to"
+                        >Transfer to</label
+                    >
+                    <label class="form__label form__transfer--label-amount"
+                        >Amount</label
+                    >
+                </form>
+            </div>
+            <div class="operations operations--request">
+                <h2>Request Loan</h2>
+                <form class="form form__request">
+                    <input
+                        type="text"
+                        class="form__request form__input form__request--to"
+                    />
+                    <button
+                        class="form__request form__request--btn"
+                        type="submit"
+                    >
+                        &rarr;
+                    </button>
+                    <label class="form__label form__request--label-amount"
+                        >Amount</label
+                    >
+                </form>
+            </div>
+            <div class="operations operations--close">
+                <h2>Close account</h2>
+                <form class="form form__close">
+                    <input
+                        type="text"
+                        class="form__close form__input form__close--user"
+                    />
+                    <input
+                        type="password"
+                        class="form__close form__input form__close--pin"
+                    />
+                    <button class="form__close form__close--btn" type="submit">
+                        &rarr;
+                    </button>
+                    <label class="form__label form__close--label-user"
+                        >Confirm user</label
+                    >
+                    <label class="form__label form__close--label-pin"
+                        >Confirm PIN</label
+                    >
+                </form>
+            </div>
+            <p class="logout-timer">
+                You will be logged out in <span class="timer">12:00</span>
+            </p>
+        </main>
+        <script src="./script/script.js"></script>
+    </body>
+</html>

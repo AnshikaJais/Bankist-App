@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #f3f3f3;
+    height: 100vh;
+    padding: 2rem;
+}
+* input {
+    text-align: center;
+}
+/* NAVBAR */
+.navbar {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar__heading {
+    color: black;
+    font-size: 2.5rem;
+    font-family: "Poppins" sans-serif;
+}
+.navbar__img {
+    height: 6rem;
+    width: 6rem;
+}
+.navbar__form > * {
+    outline: none;
+    border: none;
+}
+.navbar__form input {
+    width: 10rem;
+    height: 4rem;
+    border-radius: 40px;
+    padding: 2rem;
+    margin-right: 1rem;
+}
+.navbar__form input::placeholder {
+    text-align: center;
+    color: lightgrey;
+}
+.navbar__form button {
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* APP */
+.app {
+    padding: 5rem 20rem;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: auto repeat(3, 15rem) auto;
+    grid-gap: 2.5rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* BALANCE */
+.balance {
+    grid-column: 1 / -1;
+    display: flex;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+}
+
+.balance__label {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+.balance__date {
+    font-size: 1.5rem;
+    color: grey;
+}
+.balance__value {
+    font-size: 5rem;
+    margin-left: auto;
+}
+
+/* MOVEMENTS */
+.movements {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+    background-color: white;
+    overflow: scroll;
+}
+.movements__row {
+    padding: 3rem 5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+.movements__type {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline;
+    margin-right: 2rem;
+}
+.movements__type--deposit {
+    background-image: linear-gradient(to right bottom, lightgreen, darkgreen);
+}
+.movements__type--withdrawal {
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.movements__date {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-right: auto;
+}
+.movements__value {
+    font-size: 2rem;
+}
+/* OPERATIONS */
+.operations {
+    grid-column: 2 / 3;
+    padding: 3rem 4rem;
+    border-radius: 20px;
+}
+.operations--transfer {
+    grid-row: 2 / 3;
+    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.operations--request {
+    grid-row: 3 / 4;
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.operations--close {
+    grid-row: 4 / 5;
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+.operations form {
+    display: grid;
+    grid-template-columns: 2.5fr 2.5fr 1fr;
+    grid-template-rows: auto auto;
+}
+/* Exception for interest */
+.operations--request form {
+    grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+.operations form > * {
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    outline: none;
+    border: none;
+}
+.operations form label {
+    grid-row: 2 / 3;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.operations form > *:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.operations--transfer input {
+    background-color: #ffe063;
+}
+.operations--request input {
+    background-color: #b5fc77;
+}
+.operations--close input {
+    background-color: #ff7c82;
+}
+
+/* SUMMARY */
+.summary {
+    display: flex;
+    align-items: baseline;
+}
+.summary__label {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+.summary__value {
+    font-size: 2.2rem;
+    margin-right: 2rem;
+}
+.summary__value--in,
+.summary__value--interest {
+    color: #39b385;
+}
+.summary__value--out {
+    color: #ff7c82;
+}
+.summary button {
+    margin-left: auto;
+    outline: none;
+    border: none;
+    font-size: 1.7rem;
+}
+
+/* LOGOUT TIMER */
+.logout-timer {
+    font-size: 1.5rem;
+    justify-self: end;
+}
+
+/* MEDIA QURIES */
+@media only screen and (max-width: 1600px) {
+    .app {
+        padding: 5rem 10rem;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .app {
+        padding: 5rem;
+    }
+    .summary__value {
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .operations form input {
+        justify-self: center;
+        width: 11.5rem;
+    }
+    .operations form > *:not(:last-child) {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .summary__value {
+        margin-right: 1rem;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .app {
+        padding: 0;
+        grid-template-rows: auto repeat(3, 24rem) auto;
+    }
+    .balance {
+        margin: 3rem 0 0;
+    }
+    .movements__row {
+        padding: 3rem;
+    }
+    .summary {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+    .summary__value {
+        justify-self: start;
+    }
+    .summary__label--out {
+        grid-row: 2 / 3;
+    }
+
+    .summary__label--interest {
+        grid-row: 3 / -1;
+    }
+    .summary__value--out {
+        grid-row: 2 / 3;
+        grid-column: 2 / -1;
+    }
+    .summary__value--interest {
+        grid-row: 3 / -1;
+        grid-column: 2 / 3;
+    }
+    .operations form {
+        grid-template-columns: 2.5fr 2.5fr;
+        grid-template-rows: repeat(3, auto);
+        grid-gap: 1rem;
+    }
+    .operations form button {
+        grid-column: 1 / -1;
+    }
+    .operations form .form__input {
+        grid-column: 2 / 3;
+        justify-self: start;
+    }
+    .form__label {
+        grid-column: 1 / 2;
+    }
+    .operations form .form__transfer--label-to,
+    .operations form .form__close--label-user {
+        grid-row: 1 / 2;
+    }
+    .form__request .form__request--label-amount {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+}
